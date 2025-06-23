@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import "./Navbar.css"; // You can rename this to Header.css if you want to update it later
-import logo from "./assets/Logo.png"; 
 import { Link } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
+import "./Header.css";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -11,34 +10,21 @@ const Header = () => {
   const closeMenu = () => setMenuOpen(false);
 
   return (
-    <nav className="navbar">
-      <div className="navbar-left">
-        <img src={logo} alt="Logo" className="logo" />
-        <div className="slogan">
-          <h1 className="srdt">
-            <span className="s">S</span>
-            <span className="r">R</span>
-            <span className="d">D</span>
-            <span className="t">T</span>
-          </h1>
-          <p className="tagline">--- A Step Towards Social Change ---</p>
-        </div>
-      </div>
+    <header className="header">
+      <div className="logo">AlphaSeam</div>
 
-      <div className="menu-icon" onClick={toggleMenu}>
+      <div className="menu-toggle" onClick={toggleMenu}>
         {menuOpen ? <FaTimes /> : <FaBars />}
       </div>
 
-      <ul className={`navbar-links ${menuOpen ? "active" : ""}`}>
-        <li><Link to="/" onClick={closeMenu}>Home</Link></li>
-        <li><Link to="/about" onClick={closeMenu}>About</Link></li>
-        <li><Link to="/donate" onClick={closeMenu}>Donate</Link></li>
-        <li><Link to="/projects" onClick={closeMenu}>Projects</Link></li>
-        <li><Link to="/gallary" onClick={closeMenu}>Gallery</Link></li>
-        <li><Link to="/blog" onClick={closeMenu}>Blog</Link></li>
-        <li><Link to="/contact" onClick={closeMenu}>Contact</Link></li>
-      </ul>
-    </nav>
+      <nav className={`nav-links ${menuOpen ? "active" : ""}`}>
+        <Link to="/" onClick={closeMenu}>Home</Link>
+        <Link to="/about" onClick={closeMenu}>About</Link>
+        <Link to="/services" onClick={closeMenu}>Services</Link>
+        <Link to="/projects" onClick={closeMenu}>Projects</Link>
+        <Link to="/contact" onClick={closeMenu}>Contact</Link>
+      </nav>
+    </header>
   );
 };
 
