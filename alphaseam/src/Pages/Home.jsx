@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
 
-// Import local images
 import webDev from '../assets/Background/web_development.jpg';//
 import mobileApp from '../assets/Background/mobile_development.jpg';//
 import customSoftware from '../assets/Background/software_development.jpg';//
@@ -41,13 +40,13 @@ const Home = () => {
 
   return (
     <section className="home-hero">
-      {/* Previous image layer */}
+      
       <div
         className="bg-image fade-out"
         style={{ backgroundImage: `url(${previous.image})` }}
       ></div>
 
-      {/* Current image layer */}
+     
       <div
         className="bg-image fade-in"
         style={{ backgroundImage: `url(${current.image})` }}

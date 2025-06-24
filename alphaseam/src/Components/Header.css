@@ -17,7 +17,6 @@
   align-items: center;
 }
 
-/* Logo section */
 .logo {
   display: flex;
   align-items: center;
@@ -42,7 +41,6 @@
   letter-spacing: 1px;
 }
 
-/* Navigation */
 .nav {
   display: flex;
   align-items: center;
@@ -84,7 +82,6 @@
   transform: scaleX(1);
 }
 
-/* Hamburger menu */
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -100,7 +97,6 @@
   transition: all 0.3s;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .menu-toggle {
     display: flex;
