@@ -35,7 +35,7 @@ function Contact() {
         </div>
       </div>
 
-      {/* Google Map Section */}
+     
       <div className="map-container fade-in-up">
         <iframe
           title="Google Map"

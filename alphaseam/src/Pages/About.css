@@ -4,7 +4,7 @@
   margin-bottom: 20px;
 }
 
-/* Hero */
+
 .hero {
   display: flex;
   gap: 40px;
@@ -34,7 +34,7 @@
   border-radius: 4px;
 }
 
-/* Mission and Vision */
+
 .mission-vision {
   display: flex;
   justify-content: space-around;
@@ -62,7 +62,7 @@
   border-radius: 4px;
 }
 
-/* Stats Section */
+
 .stats {
   text-align: center;
   padding: 60px;
@@ -96,7 +96,7 @@
   margin-top: 8px;
 }
 
-/* Overview */
+
 .overview {
   background-size: cover;
   background-position: center;
