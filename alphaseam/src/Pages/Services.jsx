@@ -59,7 +59,7 @@ const stats = [
 const Services = () => {
   return (
     <>
-      {/* Services Section */}
+      
       <section className="services">
         <h2>Our Services</h2>
         <p className="description">
@@ -79,7 +79,7 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Skills Section */}
+      
       <section className="skills-section">
         <div className="skills-header">
           <h2>Our Skills</h2>
@@ -122,7 +122,7 @@ const Services = () => {
         </div>
       </section>
 
-      {/* About Section */}
+      
       <section className="about">
         <div className="about-text">
           <h2>About Our Company.</h2>
