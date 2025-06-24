@@ -127,7 +127,7 @@ const Services = () => {
         <div className="about-text">
           <h2>About Our Company.</h2>
           <p>
-            GTasterix Pvt Ltd is a global leader in software development, dedicated to
+            Alphaseam Pvt Ltd is a global leader in software development, dedicated to
             empowering businesses worldwide with cutting-edge technological solutions.
             Founded in 2019, we have consistently delivered exceptional apps that drive
             business growth and success.
