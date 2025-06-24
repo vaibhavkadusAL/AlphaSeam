@@ -1,14 +1,12 @@
-
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './Components/Header';
-
-// Dummy components (you can replace them with your actual pages)
-const Home = () => <h2>Home Page</h2>;
-const About = () => <h2>About Page</h2>;
-const Services = () => <h2>Services Page</h2>;
-const Projects = () => <h2>Projects Page</h2>;
-const Contact = () => <h2>Contact Page</h2>;
+import Footer from './Components/Footer';
+import Home from './Pages/Home';
+import Contact from './Pages/Contact';
+import Services from './Pages/Services';
+import Career from './Pages/Career';
+import About from './Pages/About';
 
 function App() {
   return (
@@ -16,11 +14,12 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/projects" element={<Projects />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/career" element={<Career />} />
+        <Route path="/about" element={<About />} />
       </Routes>
+      <Footer />
     </Router>
   );
 

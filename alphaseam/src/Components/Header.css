@@ -1,65 +1,71 @@
-/* General Styles */
 .header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  padding: 1rem 2rem;
+}
+
+.header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(to right, #003973, #e5e5be);
-  padding: 15px 30px;
-  color: #fff;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  font-family: 'Segoe UI', sans-serif;
 }
 
-.logo {
-  font-size: 24px;
+.logo a {
+  font-size: 1.5rem;
   font-weight: bold;
+  text-decoration: none;
+  color: #222;
 }
 
-.nav-links {
+.nav .nav-links {
   display: flex;
-  gap: 25px;
+  gap: 1.5rem;
+  list-style: none;
 }
 
 .nav-links a {
   text-decoration: none;
-  color: white;
+  color: #444;
   font-weight: 500;
   transition: color 0.3s;
 }
 
 .nav-links a:hover {
-  color: #ffe600;
+  color: #004080;
 }
 
-/* Menu icon for small screens */
 .menu-toggle {
   display: none;
-  font-size: 24px;
+  flex-direction: column;
   cursor: pointer;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .nav-links {
-    position: absolute;
-    top: 60px;
-    right: 0;
-    background: #003973;
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-    display: none;
-  }
+.bar {
+  height: 2px;
+  width: 25px;
+  background: #333;
+  margin: 4px 0;
+}
 
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: white;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
   .nav-links.active {
     display: flex;
-    padding: 20px 0;
-  }
-
-  .menu-toggle {
-    display: block;
-    color: white;
   }
 }

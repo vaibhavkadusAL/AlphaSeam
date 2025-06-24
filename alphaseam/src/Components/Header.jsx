@@ -1,29 +1,31 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { FaBars, FaTimes } from "react-icons/fa";
-import "./Header.css";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import './Header.css';
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const toggleMenu = () => setMenuOpen(!menuOpen);
-  const closeMenu = () => setMenuOpen(false);
-
   return (
-    <header className="header">
-      <div className="logo">AlphaSeam</div>
-
-      <div className="menu-toggle" onClick={toggleMenu}>
-        {menuOpen ? <FaTimes /> : <FaBars />}
+    <header className={`header ${menuOpen ? 'open' : ''}`}>
+      <div className="container">
+        <div className="logo">
+          <Link to="/">Alphaseam</Link>
+        </div>
+        <nav className="nav">
+          <ul className={menuOpen ? 'nav-links active' : 'nav-links'}>
+            <li><Link to="/">Home</Link></li> {/* ✅ Added Home option */}
+            <li><Link to="/about">About</Link></li>
+            <li><Link to="/services">Services</Link></li>
+            <li><Link to="/career">Career</Link></li>
+            <li><Link to="/contact">Contact</Link></li>
+          </ul>
+          <div className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+            <span className="bar"></span>
+            <span className="bar"></span>
+            <span className="bar"></span>
+          </div>
+        </nav>
       </div>
-
-      <nav className={`nav-links ${menuOpen ? "active" : ""}`}>
-        <Link to="/" onClick={closeMenu}>Home</Link>
-        <Link to="/about" onClick={closeMenu}>About</Link>
-        <Link to="/services" onClick={closeMenu}>Services</Link>
-        <Link to="/projects" onClick={closeMenu}>Projects</Link>
-        <Link to="/contact" onClick={closeMenu}>Contact</Link>
-      </nav>
     </header>
   );
 };

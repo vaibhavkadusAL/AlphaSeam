@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react'
 
 function Footer() {
@@ -7,3 +8,36 @@ function Footer() {
 }
 
 export default Footer
+=======
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './Footer.css';
+
+const Footer = () => {
+  return (
+    <footer className="footer">
+      <div className="container footer-content">
+        <div className="footer-logo">
+          <h3>Alphaseam Pvt. Ltd.</h3>
+          <p>Innovating with precision.</p>
+        </div>
+        <div className="footer-links">
+          <Link to="/about">About</Link>
+          <Link to="/services">Services</Link>
+          <Link to="/career">Career</Link>
+          <Link to="/contact">Contact</Link>
+        </div>
+        <div className="footer-contact">
+          <p>Email: hr@alphaseam.com</p>
+          <p>Phone: +91 7218072175</p>
+        </div>
+      </div>
+      <div className="footer-bottom">
+        <p>&copy; {new Date().getFullYear()} Alphaseam Pvt. Ltd. All rights reserved.</p>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
+>>>>>>> ade3dad0424193b1d9e394f97df26e5030a81e74
