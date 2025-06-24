@@ -7,7 +7,7 @@ import bgImg from '../assets/About/bg.avif';
 export default function About() {
   return (
     <div className="about-page">
-      {/* Hero Section */}
+    
       <section className="hero">
         <div className="text">
           <h2>We Create Designs<br />and technology</h2>
@@ -19,7 +19,7 @@ export default function About() {
         <img src={heroImg} alt="Team working" />
       </section>
 
-      {/* Mission & Vision */}
+      
       <section className="mission-vision">
         <div className="block">
           <h3>Our Mission</h3>
@@ -33,7 +33,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* Stats */}
+      
       <section className="stats">
         <h2>About Our Company.</h2>
         <p>
@@ -62,21 +62,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* Overview */}
-      {/* <section className="overview" style={{ backgroundImage: `url(${bgImg})` }}>
-        <div className="overlay">
-          <h2>Company Overview</h2>
-          <p>
-            At Alphaseam Pvt Ltd, we fuse innovation and execution to create custom technological
-            solutions that empower businesses worldwide to flourish in the digital age. Our
-            expertise encompasses a wide range of services, from crafting bespoke software
-            applications and robust database management systems to developing dynamic web and mobile
-            applications, seamless e-commerce solutions, and sophisticated enterprise software
-            solutions.
-          </p>
-          <button>CONTACT US</button>
-        </div>
-      </section> */}
     </div>
   );
 }
