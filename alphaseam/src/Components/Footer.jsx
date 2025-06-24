@@ -1,14 +1,4 @@
-<<<<<<< HEAD
-import React from 'react'
 
-function Footer() {
-  return (
-    <div>Footer</div>
-  )
-}
-
-export default Footer
-=======
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Footer.css';
@@ -40,4 +30,3 @@ const Footer = () => {
 };
 
 export default Footer;
->>>>>>> ade3dad0424193b1d9e394f97df26e5030a81e74
