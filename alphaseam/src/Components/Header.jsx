@@ -1,24 +1,31 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import './Header.css';
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
+
+  const handleLinkClick = () => {
+    setMenuOpen(false);
+  };
 
   return (
     <header className={`header ${menuOpen ? 'open' : ''}`}>
       <div className="container">
         <div className="logo">
-          <Link to="/">Alphaseam</Link>
+          <Link to="/" onClick={handleLinkClick}>Alphaseam</Link>
         </div>
+
         <nav className="nav">
-          <ul className={menuOpen ? 'nav-links active' : 'nav-links'}>
-            <li><Link to="/">Home</Link></li> {/* ✅ Added Home option */}
-            <li><Link to="/about">About</Link></li>
-            <li><Link to="/services">Services</Link></li>
-            <li><Link to="/career">Career</Link></li>
-            <li><Link to="/contact">Contact</Link></li>
-          </ul>
+          <div className={`nav-links ${menuOpen ? 'active' : ''}`}>
+            <Link to="/" onClick={handleLinkClick} className={location.pathname === '/' ? 'active' : ''}>Home</Link>
+            <Link to="/about" onClick={handleLinkClick} className={location.pathname === '/about' ? 'active' : ''}>About</Link>
+            <Link to="/services" onClick={handleLinkClick} className={location.pathname === '/services' ? 'active' : ''}>Services</Link>
+            <Link to="/career" onClick={handleLinkClick} className={location.pathname === '/career' ? 'active' : ''}>Career</Link>
+            <Link to="/contact" onClick={handleLinkClick} className={location.pathname === '/contact' ? 'active' : ''}>Contact</Link>
+          </div>
+
           <div className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
             <span className="bar"></span>
             <span className="bar"></span>

@@ -19,7 +19,7 @@ const Footer = () => {
         </div>
         <div className="footer-contact">
           <p>Email: hr@alphaseam.com</p>
-          <p>Phone: +91 7218072175</p>
+          <p>Phone: +91 0000000000</p>
         </div>
       </div>
       <div className="footer-bottom">
