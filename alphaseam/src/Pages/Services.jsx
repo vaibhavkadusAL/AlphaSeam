@@ -1,5 +1,7 @@
 import React from 'react';
 import './Services.css';
+import { Link } from 'react-router-dom';
+
 
 const services = [
   {
@@ -98,7 +100,10 @@ const Services = () => {
               processes, increasing efficiency, and enhancing decision-making capabilities,
               delivering high-quality solutions quickly and efficiently to meet your unique needs.
             </p>
-            <button className="contact-btn">Contact Us</button>
+            <div className="cta-buttons">
+          <Link to="/Contact" className="btn primary">Contact Us</Link>
+          {/* <Link to="/contact" className="btn secondary">Get in Touch</Link> */}
+        </div>
           </div>
 
           <div className="right">
