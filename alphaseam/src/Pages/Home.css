@@ -1,3 +1,5 @@
+/* Home.css */
+
 /* Hero Section */
 .home-hero {
   position: relative;
@@ -8,7 +10,8 @@
 
 .bg-image {
   position: absolute;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   background-size: cover;
@@ -29,7 +32,8 @@
 
 .overlay {
   position: absolute;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   height: 100%;
   width: 100%;
   background-color: rgba(0, 10, 30, 0.6);
@@ -96,7 +100,7 @@
   color: #000;
 }
 
-/* Service Boxes */
+/* Service Section */
 .service-section {
   background: #f9f9f9;
   padding: 80px 20px;
@@ -121,7 +125,7 @@
 .service-box {
   background: white;
   border-radius: 16px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   padding: 30px;
   flex: 1 1 280px;
   max-width: 300px;
@@ -132,7 +136,7 @@
 
 .service-box:hover {
   transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
 .service-box .icon {
@@ -151,6 +155,88 @@
   font-size: 0.95rem;
   color: #555;
   line-height: 1.6;
+}
+
+/* Software Development Section */
+.software-section {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  padding: 100px 20px;
+  color: #fff;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.software-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 10, 30, 0.75);
+  z-index: 0;
+}
+
+.software-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.software-container h2 {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.software-subtext {
+  font-size: 1.2rem;
+  margin-bottom: 50px;
+  color: #ccc;
+}
+
+.software-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.software-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 20px;
+  width: 280px;
+  text-align: center;
+  color: #fff;
+  backdrop-filter: blur(8px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.software-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+.soft-icon {
+  font-size: 2.5rem;
+  color: #00c6ff;
+  margin-bottom: 15px;
+}
+
+.software-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.software-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #ddd;
 }
 
 /* Scroll Animation */
@@ -192,5 +278,18 @@
   .services-grid {
     flex-direction: column;
     align-items: center;
+  }
+
+  .software-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .software-container h2 {
+    font-size: 2rem;
+  }
+
+  .software-subtext {
+    font-size: 1rem;
   }
 }

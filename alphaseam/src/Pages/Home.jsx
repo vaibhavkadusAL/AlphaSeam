@@ -4,17 +4,28 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import './Home.css';
 
-import { FaRobot, FaNetworkWired, FaMapSigns, FaServer, FaExchangeAlt } from 'react-icons/fa';
+import {
+  FaRobot,
+  FaNetworkWired,
+  FaMapSigns,
+  FaServer,
+  FaExchangeAlt,
+  FaLaptopCode,
+  FaMobileAlt,
+  FaCogs,
+  FaShoppingCart,
+  FaCloud,
+} from 'react-icons/fa';
 
-// Local images
 import webDev from '../assets/Background/web_development.jpg';
 import mobileApp from '../assets/Background/mobile_development.jpg';
 import customSoftware from '../assets/Background/software_development.jpg';
 import softwareTesting from '../assets/Background/software_testing.jpg';
-import cloudComputing from '../assets/Background/web_development.jpg';
+import cloudComputing from '../assets/Background/devops.jpg';
 import ecommerce from '../assets/Background/ecommerce.jpg';
 import dbms from '../assets/Background/dbms.jpg';
 import devops from '../assets/Background/devops.jpg';
+import softwareSectionBg from '../assets/Background/software_section.jpg';
 
 const backgrounds = [
   { image: webDev, title: 'Web Development' },
@@ -111,6 +122,63 @@ const Home = () => {
               <p>{service.desc}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* Software Development Section */}
+      <section
+        className="software-section"
+        style={{ backgroundImage: `url(${softwareSectionBg})` }}
+      >
+        <div className="software-overlay"></div>
+        <div className="software-container" data-aos="fade-up">
+          <h2>Software Development</h2>
+          <p className="software-subtext">
+            Elevate Your Vision: Expert Software Development Services for Your Success.
+          </p>
+
+          <div className="software-grid">
+            <div className="software-card" data-aos="fade-up" data-aos-delay="100">
+              <FaLaptopCode className="soft-icon" />
+              <h3>Web Applications</h3>
+              <p>
+                Transform your online presence with our custom-built web applications,
+                designed to deliver engaging user experiences and drive business growth.
+              </p>
+            </div>
+            <div className="software-card" data-aos="fade-up" data-aos-delay="200">
+              <FaMobileAlt className="soft-icon" />
+              <h3>Mobile Apps</h3>
+              <p>
+                Unlock the power of mobile with our expertly crafted iOS and Android apps,
+                engineered to captivate users and drive results.
+              </p>
+            </div>
+            <div className="software-card" data-aos="fade-up" data-aos-delay="300">
+              <FaCogs className="soft-icon" />
+              <h3>Custom Software</h3>
+              <p>
+                Streamline your operations and amplify productivity with our bespoke
+                software solutions, tailored to meet the unique needs of your business.
+              </p>
+            </div>
+            <div className="software-card" data-aos="fade-up" data-aos-delay="400">
+              <FaShoppingCart className="soft-icon" />
+              <h3>E-commerce Solutions</h3>
+              <p>
+                Revolutionize your online store with our secure, user-centric e-commerce
+                platforms, designed to boost conversions and fuel revenue growth.
+              </p>
+            </div>
+            <div className="software-card" data-aos="fade-up" data-aos-delay="500">
+              <FaCloud className="soft-icon" />
+              <h3>Cloud Computing</h3>
+              <p>
+                Harness the limitless potential of the cloud with our expert cloud
+                computing services, ensuring scalable, flexible, and secure data management.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
     </>
