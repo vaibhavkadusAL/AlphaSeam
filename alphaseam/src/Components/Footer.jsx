@@ -21,7 +21,7 @@ const Footer = () => {
         </div>
 
         <div className="footer-contact">
-          <p>Email: hr@alphaseam.com</p>
+          <p>Email: info@gtasterix.com</p>
           <p>Phone: +91 0000000000</p>
           <div className="footer-socials">
             <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram">
