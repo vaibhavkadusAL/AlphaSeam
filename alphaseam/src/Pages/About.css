@@ -1,133 +1,233 @@
-.about-page {
-  font-family: 'Segoe UI', sans-serif;
+/* Base Container */
+.about-container {
+  font-family: "Segoe UI", sans-serif;
   color: #222;
-  margin-bottom: 20px;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom right, #f4fbff, #eaf4ff);
+  animation: fadeInPage 0.8s ease-in-out;
 }
 
-
-.hero {
-  display: flex;
-  gap: 40px;
-  padding: 60px;
-  background: #fff;
-  align-items: center;
+/* Hero Section */
+.about-hero {
+  position: relative;
+  text-align: center;
 }
 
-.hero .text {
-  width: 50%;
+.hero-img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  filter: brightness(0.5);
 }
 
-.hero h2 {
-  font-size: 32px;
-  font-weight: bold;
-  margin-bottom: 20px;
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+  width: 90%;
 }
 
-.hero p {
-  line-height: 1.6;
+.about-hero h1 {
+  font-size: 2.8rem;
   margin-bottom: 10px;
-  color: #555;
 }
 
-.hero img {
-  width: 50%;
-  border-radius: 4px;
+.meta-description {
+  font-size: 1rem;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
+/* Section Styling */
+.about-section {
+  padding: 60px 20px;
+  max-width: 1100px;
+  margin: auto;
+  animation: fadeInUp 1s ease;
+}
 
+/* Intro Paragraph */
+.intro {
+  font-size: 1.1rem;
+  text-align: center;
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+/* Mission and Vision */
 .mission-vision {
   display: flex;
-  justify-content: space-around;
-  gap: 40px;
-  padding: 60px;
-  background: #f8f9fa;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  margin-bottom: 40px;
 }
 
-.mission-vision .block {
-  width: 45%;
+.box {
+  flex: 1 1 300px;
+  background: white;
+  border-left: 5px solid #007bff;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  animation: fadeInUp 1s ease;
 }
 
-.mission-vision h3 {
-  font-size: 24px;
+.box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.box img {
+  width: 100%;
+  max-height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.box h3 {
+  color: #007bff;
   margin-bottom: 10px;
 }
 
-.mission-vision p {
-  color: #555;
-  margin-bottom: 20px;
-}
-
-.mission-vision img {
-  width: 100%;
-  border-radius: 4px;
-}
-
-
-.stats {
-  text-align: center;
-  padding: 60px;
-  background: #fff;
-}
-
-.stats h2 {
-  font-size: 28px;
-  margin-bottom: 16px;
-}
-
-.stats p {
-  max-width: 700px;
-  margin: 0 auto 40px;
-  color: #555;
-}
-
-.stat-grid {
-  display: flex;
-  justify-content: center;
-  gap: 60px;
-}
-
-.stat-grid div h3 {
-  font-size: 26px;
-  color: #007acc;
-}
-
-.stat-grid div p {
-  color: #444;
-  margin-top: 8px;
-}
-
-
-.overview {
-  background-size: cover;
-  background-position: center;
-  padding: 80px 20px;
-  color: #fff;
-  position: relative;
-}
-
-.overview .overlay {
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-  backdrop-filter: brightness(0.3);
-}
-
-.overview h2 {
-  font-size: 30px;
-  margin-bottom: 20px;
-}
-
-.overview p {
+.box p {
+  color: #333;
+  font-size: 0.95rem;
   line-height: 1.6;
-  margin-bottom: 30px;
 }
 
-.overview button {
-  padding: 12px 24px;
-  background: #00aaff;
-  border: none;
-  color: #fff;
+/* Values Section */
+.values h3,
+.journey h3,
+.team h3 {
+  color: #007bff;
+  margin-bottom: 20px;
+}
+
+.values ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.values li {
+  padding: 10px 0;
+  padding-left: 20px;
+  position: relative;
+  line-height: 1.6;
+  animation: fadeIn 1s ease;
+}
+
+.values li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #007bff;
   font-weight: bold;
-  border-radius: 20px;
-  cursor: pointer;
+}
+
+/* Journey and Team */
+.journey,
+.team {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.journey-img,
+.team-img {
+  width: 100%;
+  max-width: 500px;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin: 20px auto;
+  display: block;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Animations */
+@keyframes fadeInPage {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-img {
+    height: 200px;
+  }
+
+  .about-hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .meta-description {
+    font-size: 14px;
+    padding: 0 10px;
+  }
+
+  .mission-vision {
+    flex-direction: column;
+  }
+
+  .box img {
+    max-height: 120px;
+  }
+
+  .intro {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .box {
+    padding: 15px;
+  }
+
+  .box p {
+    font-size: 0.9rem;
+  }
+
+  .journey-img,
+  .team-img {
+    max-width: 100%;
+    height: auto;
+  }
 }
