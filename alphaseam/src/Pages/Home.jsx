@@ -1,184 +1,124 @@
+// Home.jsx
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { FaCogs, FaServer, FaProjectDiagram, FaHandshake } from 'react-icons/fa';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import './Home.css';
 
-import {
-  FaRobot,
-  FaNetworkWired,
-  FaMapSigns,
-  FaServer,
-  FaExchangeAlt,
-  FaLaptopCode,
-  FaMobileAlt,
-  FaCogs,
-  FaShoppingCart,
-  FaCloud,
-} from 'react-icons/fa';
+import bg1 from '../assets/Background/bg1.jpg';
+import bg2 from '../assets/Background/bg2.jpg';
+import bg3 from '../assets/Background/bg3.jpg';
 
-import webDev from '../assets/Background/web_development.jpg';
-import mobileApp from '../assets/Background/mobile_development.jpg';
-import customSoftware from '../assets/Background/software_development.jpg';
-import softwareTesting from '../assets/Background/software_testing.jpg';
-import cloudComputing from '../assets/Background/devops.jpg';
-import ecommerce from '../assets/Background/ecommerce.jpg';
-import dbms from '../assets/Background/dbms.jpg';
-import devops from '../assets/Background/devops.jpg';
-import softwareSectionBg from '../assets/Background/software_section.jpg';
+const bgImages = [bg1, bg2, bg3];
 
-const backgrounds = [
-  { image: webDev, title: 'Web Development' },
-  { image: mobileApp, title: 'Mobile App Development' },
-  { image: customSoftware, title: 'Custom Software' },
-  { image: softwareTesting, title: 'Software Testing' },
-  { image: cloudComputing, title: 'Cloud Computing' },
-  { image: ecommerce, title: 'E-Commerce' },
-  { image: dbms, title: 'DBMS' },
-  { image: devops, title: 'DevOps' },
+const offerings = [
+  {
+    icon: <FaServer className="icon" />, 
+    title: 'SAP ERP Solutions',
+    description: 'Streamline your business operations with scalable ERP systems.'
+  },
+  {
+    icon: <FaProjectDiagram className="icon" />, 
+    title: 'Custom Software Development',
+    description: 'Build intelligent and efficient applications tailored to your enterprise.'
+  },
+  {
+    icon: <FaCogs className="icon" />, 
+    title: 'System Integration & Consulting',
+    description: 'Optimize your IT infrastructure with expert guidance.'
+  }
 ];
 
-const services = [
+const reasons = [
   {
-    icon: <FaRobot />,
-    title: 'AI Assessment Services',
-    desc: 'We specialize in AI Assessment Services designed to help businesses unlock the full potential of their SAP CX and ERP systems.',
+    icon: <FaHandshake className="icon" />, 
+    title: 'Proven SAP Expertise',
+    description: 'Industry experience in implementing SAP-powered solutions.'
   },
   {
-    icon: <FaNetworkWired />,
-    title: 'IT Assessment Services',
-    desc: 'Elevate your business with our comprehensive IT Assessment Services. Discover hidden opportunities in your IT landscape.',
+    icon: <FaServer className="icon" />, 
+    title: 'End-to-End IT Services',
+    description: 'Comprehensive services from development to deployment.'
   },
   {
-    icon: <FaMapSigns />,
-    title: 'CX Strategy & Roadmap',
-    desc: 'Transforming complex business challenges into growth with bespoke customer experience strategies.',
+    icon: <FaProjectDiagram className="icon" />, 
+    title: 'Global Project Experience',
+    description: 'Successfully delivered IT solutions to clients worldwide.'
   },
   {
-    icon: <FaServer />,
-    title: 'SAP Implementation',
-    desc: 'Revolutionizing businesses with SAP S/4HANA Cloud, SAP CX, SAP BTP, and SAP Analytics Cloud.',
-  },
-  {
-    icon: <FaExchangeAlt />,
-    title: 'SAP Migration Services',
-    desc: 'We guide businesses seamlessly through critical SAP migration processes with minimal disruption.',
-  },
+    icon: <FaCogs className="icon" />, 
+    title: 'Agile & Customer-Centric Approach',
+    description: 'We adapt to your needs to ensure success and satisfaction.'
+  }
 ];
 
 const Home = () => {
-  const [index, setIndex] = useState(0);
-  const [prevIndex, setPrevIndex] = useState(0);
+  const [theme, setTheme] = useState('light');
+  const [bgIndex, setBgIndex] = useState(0);
+
+  const toggleTheme = () => {
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+    document.documentElement.setAttribute('data-theme', newTheme);
+  };
 
   useEffect(() => {
-    AOS.init({ duration: 1000 });
-  }, []);
+    AOS.init({ duration: 800 });
+    document.documentElement.setAttribute('data-theme', theme);
+  }, [theme]);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setPrevIndex(index);
-      setIndex((prev) => (prev + 1) % backgrounds.length);
-    }, 6000);
+      setBgIndex((prev) => (prev + 1) % bgImages.length);
+    }, 5000);
     return () => clearInterval(interval);
-  }, [index]);
-
-  const current = backgrounds[index];
-  const previous = backgrounds[prevIndex];
+  }, []);
 
   return (
     <>
-      {/* Hero Section */}
-      <section className="home-hero">
-        <div
-          className="bg-image fade-out"
-          style={{ backgroundImage: `url(${previous.image})` }}
-        ></div>
-        <div
-          className="bg-image fade-in"
-          style={{ backgroundImage: `url(${current.image})` }}
-        ></div>
-        <div className="overlay"></div>
+      <button className="theme-toggle" onClick={toggleTheme}>
+        {theme === 'light' ? '🌙' : '☀️'}
+      </button>
 
+      <section
+        className="hero-section image-hero"
+        style={{ backgroundImage: `url(${bgImages[bgIndex]})` }}
+      >
+        <div className="overlay"></div>
         <div className="hero-content">
-          <h1 className="tagline">{current.title}</h1>
-          <p className="description">
-            Alphaseam delivers innovative solutions in {current.title.toLowerCase()} tailored to your business needs.
+          <h1>Empowering Digital Transformation with SAP Expertise</h1>
+          <p>
+            Welcome to Alphaseam Enterprise, where innovation meets enterprise. We specialize in
+            delivering high-performance SAP-based ERP solutions tailored for businesses of all
+            sizes. Our solutions empower global organizations to thrive in a digital-first world.
           </p>
-          <div className="cta-buttons">
-            <Link to="/services" className="btn primary">Explore Services</Link>
-            <Link to="/contact" className="btn secondary">Get in Touch</Link>
-          </div>
+          <button className="cta-button pulse">Get in Touch Today</button>
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="service-section">
-        <h2 data-aos="fade-up">Our Core Services</h2>
-        <div className="services-grid">
-          {services.map((service, idx) => (
-            <div className="service-box" key={idx} data-aos="fade-up" data-aos-delay={idx * 100}>
-              <div className="icon">{service.icon}</div>
-              <h3>{service.title}</h3>
-              <p>{service.desc}</p>
+      <section className="offerings-section card-section full-width" data-aos="fade-up">
+        <h2>Our Core Offerings</h2>
+        <div className="offerings-list">
+          {offerings.map((item, idx) => (
+            <div className="card rectangle" key={idx} data-aos="fade-up" data-aos-delay={idx * 100}>
+              {item.icon}
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Software Development Section */}
-      <section
-        className="software-section"
-        style={{ backgroundImage: `url(${softwareSectionBg})` }}
-      >
-        <div className="software-overlay"></div>
-        <div className="software-container" data-aos="fade-up">
-          <h2>Software Development</h2>
-          <p className="software-subtext">
-            Elevate Your Vision: Expert Software Development Services for Your Success.
-          </p>
-
-          <div className="software-grid">
-            <div className="software-card" data-aos="fade-up" data-aos-delay="100">
-              <FaLaptopCode className="soft-icon" />
-              <h3>Web Applications</h3>
-              <p>
-                Transform your online presence with our custom-built web applications,
-                designed to deliver engaging user experiences and drive business growth.
-              </p>
+      <section className="reasons-section card-section full-width" data-aos="fade-up">
+        <h2>Why Alphaseam Enterprise?</h2>
+        <div className="reasons-list">
+          {reasons.map((item, idx) => (
+            <div className="card rectangle" key={idx} data-aos="fade-up" data-aos-delay={idx * 100}>
+              {item.icon}
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
             </div>
-            <div className="software-card" data-aos="fade-up" data-aos-delay="200">
-              <FaMobileAlt className="soft-icon" />
-              <h3>Mobile Apps</h3>
-              <p>
-                Unlock the power of mobile with our expertly crafted iOS and Android apps,
-                engineered to captivate users and drive results.
-              </p>
-            </div>
-            <div className="software-card" data-aos="fade-up" data-aos-delay="300">
-              <FaCogs className="soft-icon" />
-              <h3>Custom Software</h3>
-              <p>
-                Streamline your operations and amplify productivity with our bespoke
-                software solutions, tailored to meet the unique needs of your business.
-              </p>
-            </div>
-            <div className="software-card" data-aos="fade-up" data-aos-delay="400">
-              <FaShoppingCart className="soft-icon" />
-              <h3>E-commerce Solutions</h3>
-              <p>
-                Revolutionize your online store with our secure, user-centric e-commerce
-                platforms, designed to boost conversions and fuel revenue growth.
-              </p>
-            </div>
-            <div className="software-card" data-aos="fade-up" data-aos-delay="500">
-              <FaCloud className="soft-icon" />
-              <h3>Cloud Computing</h3>
-              <p>
-                Harness the limitless potential of the cloud with our expert cloud
-                computing services, ensuring scalable, flexible, and secure data management.
-              </p>
-            </div>
-          </div>
+          ))}
         </div>
       </section>
     </>
