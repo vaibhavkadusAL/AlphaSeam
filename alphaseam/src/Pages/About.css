@@ -1,4 +1,3 @@
-/* Base Container */
 .about-container {
   font-family: "Segoe UI", sans-serif;
   color: #222;
@@ -8,7 +7,6 @@
   animation: fadeInPage 0.8s ease-in-out;
 }
 
-/* Hero Section */
 .about-hero {
   position: relative;
   text-align: center;
@@ -42,7 +40,6 @@
   margin: 0 auto;
 }
 
-/* Section Styling */
 .about-section {
   padding: 60px 20px;
   max-width: 1100px;
@@ -50,7 +47,6 @@
   animation: fadeInUp 1s ease;
 }
 
-/* Intro Paragraph */
 .intro {
   font-size: 1.1rem;
   text-align: center;
@@ -59,7 +55,6 @@
   margin-bottom: 40px;
 }
 
-/* Mission and Vision */
 .mission-vision {
   display: flex;
   flex-wrap: wrap;
@@ -104,7 +99,6 @@
   line-height: 1.6;
 }
 
-/* Values Section */
 .values h3,
 .journey h3,
 .team h3 {
@@ -134,7 +128,6 @@
   font-weight: bold;
 }
 
-/* Journey and Team */
 .journey,
 .team {
   text-align: center;
@@ -153,7 +146,6 @@
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
-/* Animations */
 @keyframes fadeInPage {
   from {
     opacity: 0;
@@ -183,7 +175,6 @@
   }
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .hero-img {
     height: 200px;
