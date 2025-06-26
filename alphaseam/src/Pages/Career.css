@@ -1,95 +1,47 @@
-@keyframes zoomBg {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-.careers-wrapper {
+.career-container {
   position: relative;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  animation: zoomBg 25s ease-in-out infinite;
-  min-height: 100vh;
-  overflow-x: hidden;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Segoe UI', sans-serif;
 }
 
-.overlay {
+/* Fullscreen Background Video */
+.career-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+/* Semi-dark overlay to improve text visibility */
+.career-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+/* Fully centered heading */
+.career-content {
   position: absolute;
-  inset: 0;
-  background-color: rgba(255, 255, 255, 0.85);
-  z-index: 0;
-}
-
-.careers-content {
-  position: relative;
-  z-index: 1;
-  max-width: 900px;
-  margin: auto;
-  padding: 60px 20px;
-  font-family: sans-serif;
-}
-
-.title {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* precise centering */
   text-align: center;
-  font-size: 2rem;
-  margin-bottom: 40px;
-  color: #333;
-  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+  z-index: 1;
 }
 
-
-.job-box {
-  background-color: rgba(255, 255, 255, 0.9);
-  margin-bottom: 20px;
-  padding: 25px;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  position: relative;
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.6s ease;
-}
-
-.job-box.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.job-title {
-  color: #007bff;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.job-box p {
-  margin: 6px 0;
-  color: #333;
-  font-size: 0.95rem;
-}
-
-.job-box strong {
-  font-weight: bold;
-}
-
-.apply-btn {
-  position: absolute;
-  right: 20px;
-  top: 25px;
-  background-color: #007bff;
+/* Heading style */
+.career-heading {
   color: white;
-  border: none;
-  padding: 10px 18px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.apply-btn:hover {
-  background-color: #0056b3;
+  font-size: 3.5rem;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+  font-weight: bold;
 }

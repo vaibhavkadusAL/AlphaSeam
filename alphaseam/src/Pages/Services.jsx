@@ -1,52 +1,113 @@
 import React from 'react';
 import './Services.css';
+import { Link } from 'react-router-dom';
+import bgVideo from '../assets/Background/bg3_Video.mp4'; // Background video import
+
+const services = [
+  { title: "Web Development", description: "Our developers deliver responsive and scalable web solutions.", icon: "📄" },
+  { title: "Mobile App Development", description: "We specialize in custom mobile app solutions for startups and enterprises.", icon: "⏰" },
+  { title: "Remote Staffing", description: "Hire top-tier remote developers tailored to your needs.", icon: "📘" },
+  { title: "Custom Software", description: "Tailored software to meet your unique business challenges.", icon: "📦" },
+  { title: "Software Testing", description: "Ensure quality with our manual and automated testing services.", icon: "🧪" },
+  { title: "Cloud Computing", description: "Deploy scalable cloud solutions on AWS, Azure, or GCP.", icon: "🏠" },
+  { title: "E-Commerce", description: "Build and scale secure and fast online stores.", icon: "🛒" },
+  { title: "DBMS", description: "Database solutions for efficient data management.", icon: "🗄️" },
+  { title: "DevOps", description: "Automate infrastructure, CI/CD, and monitoring pipelines.", icon: "🔧" },
+];
+
+const stats = [
+  { icon: "⏰", value: 5, label: "Happy Clients" },
+  { icon: "🔄", value: 4, label: "Projects completed" },
+  { icon: "✏️", value: 4, label: "Positive feedback" },
+  { icon: "⚡", value: 450, label: "Hours Of Support" },
+];
 
 const Services = () => {
   return (
-    <section className="services-container">
-      <h1 className="services-title">Our Services | SAP & ERP Experts – Alphaseam Enterprise</h1>
-      <p className="services-meta">
-        Alphaseam Enterprise offers SAP ERP development, system integration, IT consulting, and software support. Tailored enterprise tech solutions.
-      </p>
+    <>
+      {/* Background Video Section */}
+      <section className="services-video-section">
+        <video autoPlay muted loop playsInline className="services-video">
+          <source src={bgVideo} type="video/mp4" />
+        </video>
+        <div className="services-overlay"></div>
+        <div className="services-heading-content">
+          <h1 className="services-main-heading">Our Services</h1>
+        </div>
+      </section>
 
-      <div className="services-intro">
-        We provide a full spectrum of IT development and consulting services with a strong focus on SAP and ERP ecosystems. Our custom solutions are designed to optimize operations, improve workflows, and support your business growth.
-      </div>
+      {/* Services Description Section */}
+      <section className="services">
+        <p className="description">
+          Empowered by exceptional talent, Alphaseam Pvt Ltd elevates your digital
+          landscape by converging innovation and technology to craft bespoke software
+          solutions that drive business success.
+        </p>
 
-      <h2 className="core-title">Our Core Services</h2>
-      <ul className="core-services">
-        <li>
-          <h3>SAP Implementation & Customization</h3>
-          <p>Deploy, configure, and tailor SAP systems to meet the unique needs of your enterprise.</p>
-        </li>
-        <li>
-          <h3>ERP Software Development</h3>
-          <p>Custom-built ERP applications that help manage everything from finance and HR to inventory and sales.</p>
-        </li>
-        <li>
-          <h3>System Integration & Support</h3>
-          <p>Achieve seamless system communication and enjoy round-the-clock technical support.</p>
-        </li>
-        <li>
-          <h3>IT Strategy & Consulting</h3>
-          <p>Receive expert advice on digital transformation, infrastructure upgrades, and technology adoption.</p>
-        </li>
-      </ul>
+        <div className="grid">
+          {services.map((service, index) => (
+            <div className="box" key={index}>
+              <div className="icon">{service.icon}</div>
+              <h3>{service.title}</h3>
+              <p>{service.description}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
-      <h2 className="industries-title">Industries We Serve</h2>
-      <ul className="industries-list">
-        <li>Manufacturing</li>
-        <li>Retail & E-commerce</li>
-        <li>Logistics & Supply Chain</li>
-        <li>Healthcare</li>
-        <li>Public Sector</li>
-      </ul>
+      {/* Skills Section */}
+      <section className="skills-section">
+        <div className="skills-header">
+          <h2>Our Skills</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus fugiat, vel veniam, eos et delectus eveniet molestiae. Esse, voluptas ratione.</p>
+          <hr />
+        </div>
 
-      <div className="cta">
-        <p>Partner with us for your next IT initiative.</p>
-        <button className="cta-button">Request a Consultation</button>
-      </div>
-    </section>
+        <div className="skills-content">
+          <div className="left">
+            <h3>Custom Software Development</h3>
+            <p>
+              Alphaseam custom software development empowers businesses to thrive by optimizing
+              processes, increasing efficiency, and enhancing decision-making capabilities,
+              delivering high-quality solutions quickly and efficiently to meet your unique needs.
+            </p>
+            <div className="cta-buttons">
+              <Link to="/Contact" className="btn primary">Contact Us</Link>
+            </div>
+          </div>
+
+          <div className="right">
+            <div className="skill-bar"><span>DBMS</span><div className="bar"><div className="progress dbms"></div></div></div>
+            <div className="skill-bar"><span>Web Application</span><div className="bar"><div className="progress web"></div></div></div>
+            <div className="skill-bar"><span>Android Application</span><div className="bar"><div className="progress android"></div></div></div>
+            <div className="skill-bar"><span>iOS Development</span><div className="bar"><div className="progress ios"></div></div></div>
+          </div>
+        </div>
+      </section>
+
+      {/* About Stats Section */}
+      <section className="about">
+        <div className="about-text">
+          <h2>About Our Company.</h2>
+          <p>
+            Alphaseam Pvt Ltd is a global leader in software development, dedicated to
+            empowering businesses worldwide with cutting-edge technological solutions.
+            Founded in 2019, we have consistently delivered exceptional apps that drive
+            business growth and success.
+          </p>
+        </div>
+
+        <div className="about-stats">
+          {stats.map((stat, index) => (
+            <div className="stat-box" key={index}>
+              <div className="stat-icon">{stat.icon}</div>
+              <h3>{stat.value}</h3>
+              <p>{stat.label}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+    </>
   );
 };
 
