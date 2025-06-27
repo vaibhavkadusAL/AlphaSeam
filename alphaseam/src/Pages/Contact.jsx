@@ -1,7 +1,7 @@
 import React from 'react';
 import './Contact.css';
 import { FaFacebookF, FaTwitter, FaLinkedinIn } from 'react-icons/fa';
-import bgVideo from '../assets/Background/bg3_Video.mp4';
+import bgVideo from '../assets/Background/bg2_Video.mp4';
 
 function Contact() {
   return (

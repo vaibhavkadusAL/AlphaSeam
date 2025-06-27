@@ -1,10 +1,18 @@
 import React from 'react';
 import './Blog.css';
-import blogBg from '../assets/Background/blog.jpg'; 
+import blogVideo from '../assets/Background/bg3_Video.mp4';
+
 function Blog() {
   return (
-    <section className="blog-section" style={{ backgroundImage: `url(${blogBg})` }}>
-      <div className="blog-overlay">
+    <section className="blog-video-section">
+      {/* Background Video */}
+      <video autoPlay muted loop className="blog-video">
+        <source src={blogVideo} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      {/* Overlay Content */}
+      <div className="blog-video-overlay">
         <div className="blog-content">
           <h1 className="blog-title">Our Blog</h1>
           <p className="blog-subtitle">
